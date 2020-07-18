@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Myriad Pro regular";
+  src: url("/fonts/MyriadPro-Regular.otf");
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Myriad Pro regular" ;
+}
+
+h1 {
+  margin : 0;
+}
+
+a {
+  color : inherit;
+  text-decoration: none;
+}
+
+
+
