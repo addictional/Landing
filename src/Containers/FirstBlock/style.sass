@@ -1,0 +1,54 @@
+.categories
+    margin : 0 auto
+    width : 1024px
+    .types
+        position : relative
+        display : flex           
+        &__category
+            width : 256px
+            font-family : Segoe WP light
+            text-align: center
+            color : #676666
+            cursor : pointer
+            &--selected
+                position : relative
+                font-family : Segoe WP semibold
+                color : #5f5f5f
+                border : #d7d7d7 solid 1px
+                border-top-right-radius: 4px
+                border-top-left-radius: 4px
+                border-bottom : none
+                box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5)
+                &:after
+                    content : ''
+                    position : absolute
+                    width: 255px
+                    height : 30px
+                    top : 256px
+                    right : 0
+                    box-shadow : none
+                    background : #ffffff
+            &-icon
+                margin : 25px 60px 0 60px
+                pointer-events: none
+    .content
+        width : 1024px
+        border : #d7d7d7 solid 1px 
+        box-shadow: 0px 0 10px rgba(0, 0, 0, 0.5)
+        &__image
+            margin : 57px 155.5px 0 155.5px;
+            &--loading
+        h4
+            font-family : Segoe WP light
+            font-size: 30px 
+            color : #818181
+            padding-left : 25px     
+        &__text
+            font-family : Univers CE light
+            font-size: 13px
+            line-height : 23px
+            color : #818181
+            font-weight : bold
+            padding : 0 67px 36px 25px             
+
+
