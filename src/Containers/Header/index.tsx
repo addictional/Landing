@@ -15,6 +15,7 @@ let prevScroll = 0;
 const FIXED_MENU_CLASS = 'header__top__fixed';
 const Header : React.FC<{}> = (props)=>{
     const [visibility,menuVisibility] = useState(false);
+    const headerRef = React.useRef(null);
     const scrollHandler = (e : Event) =>{
         let st = window.pageYOffset
         if (st > prevScroll){
@@ -22,8 +23,8 @@ const Header : React.FC<{}> = (props)=>{
                 menuVisibility(false);
             }
         } else {
-            const commonHeader = document.querySelector('.header__top');
-            const height = commonHeader ? commonHeader.clientHeight : 0;
+            const commonHeader = headerRef.current;
+            const height = commonHeader ? (commonHeader as any).clientHeight : 0;
             if(!visibility && st > height) {
                 menuVisibility(true);
             }else if( st < height) {
@@ -45,7 +46,7 @@ const Header : React.FC<{}> = (props)=>{
             <h1 className="header__top__fixed-title">Leo/-</h1>
             <Navigation links={LINKS}/>
         </div>
-        <div className="header__top">
+        <div ref={headerRef} className="header__top">
             <h1 className="header__top-title">Leo/-</h1>
             <Navigation containerClass="header__top" links={LINKS}/>
         </div>
