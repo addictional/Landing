@@ -10,6 +10,27 @@
         margin : 0 auto
         padding-top : 46px
         color : #d0d8d9
+        &__fixed
+            display : flex
+            width : 100%
+            height : 60px
+            color : #ffffff
+            position : fixed
+            z-index : 10
+            background : no-repeat url("/img/background.png")
+            background-size: cover
+            justify-content: space-between
+            transition: transform .5s
+            &--hide
+                transform: translateY(-70px);
+            &--show
+                transform: translateY(0px);    
+            h1
+                margin : 8px 0 0 50px
+            .navigation
+                margin : 20px 50px 0 0
+                a
+                    margin-right: 20px   
         &-title
             font-size : 134px
             font-weight: normal
@@ -49,7 +70,3 @@
                 padding : 5px 15px
                 font-weight: normal
                 font-size: 15px
-                        
-
-
-        

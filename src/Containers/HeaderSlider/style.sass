@@ -13,6 +13,7 @@
             transition: transform .5s
             &--block-animation
                 transition : none
+                -ms-transition : none
             &-element
                 width : 1024px
                 flex-shrink: 0
@@ -23,13 +24,14 @@
         opacity : 0.68
         &--rigth
             margin-right: 53px
-            path:first-child
-                transform: translate(18px, 15px)
         &--left
             margin-left : 53px  
-            path:first-child
-                transform: translate(29px, 34px) rotateZ(180deg)
 
 @media (max-width : 1279px)
     .header__slider
-        width : 100%                            
+        width : 100%
+    .header__slider__button
+        &--rigth
+            margin-right: auto
+        &--left                                
+            margin-left : auto 
