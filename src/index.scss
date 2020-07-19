@@ -2,12 +2,29 @@
   font-family: "Myriad Pro regular";
   src: url("/fonts/MyriadPro-Regular.otf");
 }
+@font-face {
+  font-family: "Segoe WP light";
+  src: url("/fonts/SegoeWP-Light.ttf");
+}
+@font-face {
+  font-family: "Segoe WP semibold";
+  src: url("/fonts/SegoeWP-Semibold.ttf");
+}
+
+@font-face {
+  font-family: "Univers CE light";
+  src: url("/fonts/UniversCE-Light.ttf");
+}
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Myriad Pro regular" ;
+}
+
+p {
+  margin : 0
 }
 
 h1 {
@@ -17,6 +34,10 @@ h1 {
 a {
   color : inherit;
   text-decoration: none;
+}
+
+input {
+  outline : none;
 }
 
 
