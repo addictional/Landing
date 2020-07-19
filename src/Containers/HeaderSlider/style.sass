@@ -1,0 +1,35 @@
+.header__slider
+    display : flex
+    justify-content: space-between
+    width : 1280px
+    margin : 0 auto
+    &__content
+        overflow : hidden
+        width : 1024px
+        background : transparent
+        box-sizing: border-box;
+        .wrapper
+            display : flex
+            transition: transform .5s
+            &--block-animation
+                transition : none
+            &-element
+                width : 1024px
+                flex-shrink: 0
+    &__button
+        margin-top : 81px
+        cursor : pointer;
+        fill : #767a79
+        opacity : 0.68
+        &--rigth
+            margin-right: 53px
+            path:first-child
+                transform: translate(18px, 15px)
+        &--left
+            margin-left : 53px  
+            path:first-child
+                transform: translate(29px, 34px) rotateZ(180deg)
+
+@media (max-width : 1279px)
+    .header__slider
+        width : 100%                            
