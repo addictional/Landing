@@ -1,7 +1,7 @@
 .main > .subscribe
     margin : 50px auto 35px auto
     display : flex
-    justify-content: space-between
+    justify-content: space-around
     width : 1024px
     .subscribe-login
         background : #e67624
@@ -11,9 +11,19 @@
                 margin-right : 14px; 
     .subscribe-email
         background : #01d4f3
-        margin-right : 20px  
         .form__bottom
             input
                 width : 264px
             &-submit
-                background : #029bb1
+                background : #029bb1                     
+@media (max-width : 1024px)
+    .main > .subscribe 
+        width: 100%
+        display : block
+        .form 
+            margin : 0 auto 20px auto
+@media (max-width:480px)
+    .subscribe-two-input
+        margin-right : auto!important;               
+
+        

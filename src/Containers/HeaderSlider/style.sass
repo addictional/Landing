@@ -29,9 +29,19 @@
 
 @media (max-width : 1279px)
     .header__slider
+        position : relative
         width : 100%
-    .header__slider__button
-        &--rigth
-            margin-right: auto
-        &--left                                
-            margin-left : auto 
+        &__button
+            z-index : 2
+            &--rigth
+                position : absolute
+                right : -30px
+            &--left                                
+                position : absolute
+                left : -30px
+        &__content
+            width : 100%
+            .wrapper
+                &-element
+                    width : 100%
+                

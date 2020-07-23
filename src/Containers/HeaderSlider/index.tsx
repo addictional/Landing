@@ -1,8 +1,9 @@
-import React , {useState} from 'react';
+import React , {useState,useEffect} from 'react';
+import {debounce,throttle} from 'lodash';
 import './style.sass';
 
 const HeaderSlider : React.FC = (props) => {
-    const WRAPPER_WIDTH = 1024;
+    const [WRAPPER_WIDTH,setWidth] = useState(window.innerWidth < 1279 ? window.innerWidth : 1024);
     let childs : any = <div key={0}  className="header__slider-element">{props.children}</div>;
     if(React.Children.count(props.children)) {
         const lenght = React.Children.count(props.children);
@@ -14,11 +15,27 @@ const HeaderSlider : React.FC = (props) => {
         })
     }
     const length = React.Children.count(childs);
-    const [x,translate] = useState(-1024);
+    const [x,translate] = useState(-WRAPPER_WIDTH);
     const [key,changeKey] = useState(1);
     const [block ,setBlock] = useState(false);
     const [transitionInProgress, setTransitionInProgress] = useState(false);
 
+    const onResize = ()=>{
+        setWidth(window.innerWidth < 1279 ? window.innerWidth : 1024);
+        changeKey(1);
+        translate(-(window.innerWidth < 1279 ? window.innerWidth : 1024))
+        console.log(x,key);
+    }
+    
+
+    const _trottledOnResize = throttle(onResize,400);
+
+    useEffect(()=>{
+        window.addEventListener('resize',_trottledOnResize)
+        return () =>{
+            window.removeEventListener('resize',_trottledOnResize);
+        }
+    })
 
     const swipeRight = () => {
         if(transitionInProgress) {

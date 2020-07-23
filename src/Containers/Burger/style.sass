@@ -1,0 +1,19 @@
+.burger
+    display : block
+    width : 30px
+    height : 30px
+    div
+        transition: transform 1s ease, opacity 1s ease
+        background : #ffffff
+        width  : 30px
+        height : 3px
+        margin : 5px auto
+        opacity : 1; 
+    &--cross
+        .burger
+            &__row-1
+                transform : translateY(9px) rotateZ(45deg)
+            &__row-2
+                opacity : 0;  
+            &__row-3
+                transform : translateY(-7px) rotateZ(-45deg)

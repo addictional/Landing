@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../../Components/Menu/index';
 import HeaderSlider from '../HeaderSlider/index';
+import Burger from '../Burger';
 import './style.sass'
 
 const LINKS = [
@@ -44,10 +45,12 @@ const Header : React.FC<{}> = (props)=>{
     <header className="header" >
         <div className={`${FIXED_MENU_CLASS} ${visibility ? FIXED_MENU_CLASS+'--show' : FIXED_MENU_CLASS+'--hide'}`}>
             <h1 className="header__top__fixed-title">Leo/-</h1>
+            <Burger className="header__top__fixed-burger"/>
             <Navigation links={LINKS}/>
         </div>
         <div ref={headerRef} className="header__top">
             <h1 className="header__top-title">Leo/-</h1>
+            <Burger className="header__top-burger"/>
             <Navigation containerClass="header__top" links={LINKS}/>
         </div>
         <HeaderSlider>
@@ -83,5 +86,3 @@ export default Header;
 
   
 
-
-  
