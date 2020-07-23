@@ -25,7 +25,7 @@
                 transform: translateY(-70px);
             &--show
                 transform: translateY(0px);    
-            h1
+            &--title
                 margin : 8px 0 0 50px
             .navigation
                 margin : 20px 50px 0 0
@@ -35,6 +35,8 @@
             font-size : 134px
             font-weight: normal
             margin: 0px 0 0px 100px
+        &-burger
+            display : none    
         .navigation
             margin-left : 151px
             width : 446px
@@ -70,3 +72,57 @@
                 padding : 5px 15px
                 font-weight: normal
                 font-size: 15px
+    .burger
+        display : none            
+
+@media (max-width : 1024px)
+    .header
+        height : auto
+        &__top
+            width: 90%
+            padding: 0 auto
+            &-title
+                font-size : 120px
+                font-weight: normal
+                margin: 0 0
+            .navigation
+                margin-left : auto
+@media (max-width : 769px)
+    .header
+        &__top
+            justify-content: space-between
+            width: 90%
+            padding-top : 10px
+            margin : 0 auto
+            &-title
+                font-size : 60px
+                font-weight: normal
+                margin: 0 0
+            &-burger
+                display : block
+                margin-top : 20px  
+            .navigation
+                display : none 
+            &__fixed
+                padding: 0
+                justify-content : space-around
+                .navigation
+                    display : none
+                &-title
+                    margin: 0;
+                    margin-top: 7px
+                &-burger
+                    margin-top: 12px
+        &__first_slide
+            width : 100%
+            display: block
+            img
+                margin: 0 auto
+                display: block
+            .info
+                display: flex
+                margin: 0 auto
+                width: 60%
+                justify-content: space-between
+        .burger
+            display : block            
